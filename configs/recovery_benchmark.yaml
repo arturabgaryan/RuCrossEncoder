@@ -1,0 +1,15 @@
+# Copy the external recovery candidate directory to artifacts/legacy-candidate.
+# This is a diagnostic configuration, not reproduction of the report's benchmark.
+mode: classification
+test_path: data/processed/test.jsonl
+output_dir: artifacts/recovery-evaluation
+models:
+  - name: legacy-candidate
+    model_id: artifacts/legacy-candidate
+    kind: custom
+    max_length: 128
+    batch_size: 16
+    use_fast: false
+    score_mode: softmax
+    positive_label: 1
+    threshold: 0.5
