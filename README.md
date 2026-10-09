@@ -77,8 +77,7 @@ values: [metrics.json](results/report_2025/metrics.json).
 
 Data: [mMARCO](https://huggingface.co/datasets/unicamp-dl/mmarco) and
 [generated Russian triples](https://huggingface.co/datasets/ArturAbg/GeneratedRURerank).
-The generation prompt uses unrelated negatives. Answers need factual review;
-real search evaluation requires harder candidate pools.
+The generation prompt uses unrelated negatives. 
 
 ## Repository
 
