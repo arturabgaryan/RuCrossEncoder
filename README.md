@@ -90,15 +90,3 @@ real search evaluation requires harder candidate pools.
 - notebooks/legacy/: original notebooks retained for reference.
 
 Large data, weights and run artifacts are ignored by Git. Do not commit credentials.
-
-## Development
-
-```bash
-ruff check .
-ruff format --check .
-pytest -q
-```
-
-CI runs these checks on CPU. Full training, Ollama generation and historical
-benchmark reproduction are separate experiments. No code license is selected;
-publication alone does not grant reuse rights.
