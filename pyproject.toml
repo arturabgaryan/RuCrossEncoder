@@ -1,0 +1,38 @@
+[build-system]
+requires = ["hatchling>=1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "rucrossencoder"
+version = "0.1.0"
+description = "Russian query-document relevance classification and reranking"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "torch>=2.4,<3", "transformers>=4.45,<5", "numpy>=1.26",
+  "PyYAML>=6", "scikit-learn>=1.4", "safetensors>=0.4",
+  "sentencepiece>=0.2", "protobuf>=4",
+]
+
+[project.optional-dependencies]
+generate = ["ollama>=0.4"]
+data = ["pandas>=2.2", "openpyxl>=3.1", "pyarrow>=16"]
+dev = ["pytest>=8", "ruff>=0.9"]
+
+[project.scripts]
+rucrossencoder = "rucrossencoder.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/rucrossencoder"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 100
+extend-exclude = ["notebooks/legacy"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+ignore = ["E501"]
