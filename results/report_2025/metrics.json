@@ -1,0 +1,11 @@
+{
+  "status": "reported_not_reproduced",
+  "source": "Author-supplied Abgaryan internship report, section 2.7, PDF page 22",
+  "test_description": "Reported as 200000 Russian text pairs; exact protocol and model revisions are unavailable",
+  "models": {
+    "MsMarco": {"accuracy": 0.91, "precision": 0.97, "recall": 0.85, "f1": 0.91},
+    "FRIDA": {"accuracy": 0.88, "precision": 0.86, "recall": 0.90, "f1": 0.88},
+    "RuCrossEncoder": {"accuracy": 0.80, "precision": 0.73, "recall": 0.94, "f1": 0.83}
+  },
+  "notes": ["F1 is 0.83 in the table and 0.82 in adjacent prose.", "Transcribed results, not a run of the new pipeline."]
+}

@@ -1,0 +1,15 @@
+mode: classification
+test_path: data/processed/test.jsonl
+output_dir: artifacts/evaluation
+k: 10
+models:
+  - name: RuCrossEncoder
+    model_id: artifacts/training/best
+    kind: custom
+    max_length: 128
+    batch_size: 32
+    score_mode: softmax
+    positive_label: 1
+    threshold: 0.5
+# Add baselines with actual IDs, tokenizers, revisions and scoring contracts.
+# sequence_classification supports HF classifiers; embedding models need another adapter.
